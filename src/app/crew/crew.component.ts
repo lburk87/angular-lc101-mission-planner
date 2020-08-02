@@ -25,5 +25,26 @@ export class CrewComponent implements OnInit {
   ngOnInit() { }
 
   // Code the 'addCrewMember' function here:
+  // Open crew.component.ts and create the addCrewMember function:
+
+  //   It should take a candidate object as a parameter.
+  //   It should check if the candidate is already part of the crew.
+  //   If the crew size is less than 3 AND the candidate is not part of the crew, then their data should be added to the crew array.
+  //   If the candidate is already part of the crew, then their data should be removed from the crew array
+  addCrewMember(member: object) {
+    if (this.crew.includes(member)) {
+      this.inCrew = true;
+    } else {
+      this.inCrew = false;
+    }
+    
+    if (this.inCrew) {
+        let index = this.crew.indexOf(member);
+        this.crew.splice(index, 1);
+    } else if (!this.inCrew && this.crew.length < 3) {
+        this.crew.push(member);
+    }
+  }
+
 
 }

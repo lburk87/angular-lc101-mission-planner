@@ -1,6 +1,8 @@
 .displayBox {
     height: 275px;
     width: auto;
+    background-color: papayawhip;
+    border: medium;
 }
 
 button {
